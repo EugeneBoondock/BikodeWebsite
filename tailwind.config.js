@@ -7,32 +7,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0a0a0b',
-        foreground: '#ededed',
-        primary: {
-          DEFAULT: '#3b82f6',
-          dark: '#1d4ed8',
-        },
-        surface: '#18181b',
-        surfaceBorder: '#27272a',
+        // Exact Bikode IDE dark palette from WelcomeScreen.c
+        'biko-bg': '#181818',   // DK_BG    RGB(24,24,24)
+        'biko-surface': '#242424',   // DK_SURFACE
+        'biko-hover': '#30323a',   // DK_SURFACE_HOV
+        'biko-border': '#373737',   // DK_BORDER
+        'biko-accent': '#4B8BF5',   // DK_ACCENT
+        'biko-accent2': '#64A0FF',   // DK_ACCENT_HOV
+        'biko-text1': '#E6E6E6',   // DK_TEXT1
+        'biko-text2': '#969696',   // DK_TEXT2
+        'biko-muted': '#505050',   // DK_MUTED
+        'biko-divider': '#323232',   // DK_DIVIDER
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'Consolas', 'monospace'],
+        serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+        sans: ['"Inter"', 'sans-serif'],
       },
-      animation: {
-        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-        'fade-in': 'fadeIn 0.5s ease-out forwards',
-      },
-      keyframes: {
-        fadeInUp: {
-          '0%': { opacity: 0, transform: 'translateY(20px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
-        },
-        fadeIn: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
-        }
-      }
     },
   },
   plugins: [],

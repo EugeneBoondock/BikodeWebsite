@@ -1,90 +1,113 @@
 import { motion } from 'framer-motion';
-import { GitPullRequest, Users, Star, ArrowRight } from 'lucide-react';
+import { GitPullRequest, Bug, Star, BookOpen } from 'lucide-react';
+
+const steps = [
+    { n: '01', title: 'Fork the Repo', desc: 'Head to GitHub and fork EugeneBoondock/Bikode to your own account.', icon: <Star size={16} className="text-biko-accent" /> },
+    { n: '02', title: 'Pick an Issue', desc: 'Browse open issues, pick something that excites you, and leave a comment.', icon: <Bug size={16} className="text-yellow-400" /> },
+    { n: '03', title: 'Write Code', desc: 'Build your feature or fix in C, C++, or JS. The codebase is modular.', icon: <BookOpen size={16} className="text-green-400" /> },
+    { n: '04', title: 'Send a PR', desc: 'Open a pull request. We review fast and merge faster.', icon: <GitPullRequest size={16} className="text-purple-400" /> },
+];
 
 export default function CommunitySection() {
     return (
-        <section id="community" className="w-full relative overflow-hidden py-32 mt-12 bg-surface/20 border-y border-white/5">
-            {/* Background grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <section id="community" className="w-full bg-biko-surface border-y-2 border-biko-border py-24 relative overflow-hidden">
+            {/* Halftone background decoration */}
+            <div
+                className="absolute inset-0 halftone opacity-20 pointer-events-none"
+                style={{ maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)' }}
+            />
 
             <div className="max-w-6xl mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+                    {/* Left: Heading + OS manifesto */}
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
+                        initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.55 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Built by the <span className="text-primary">Community</span>. <br /> Built for everyone.</h2>
-                        <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                            Bikode is proudly open-source and relies on the passion of developers around the world. Whether you want to fix a bug, add a feature, or improve documentation, your contributions are welcome.
-                        </p>
+                        <div className="badge mb-6">Open Source</div>
+                        <h2 className="font-serif text-5xl md:text-6xl font-normal text-biko-text1 leading-tight mb-6">
+                            Built in<br />
+                            <span className="text-biko-accent italic">public</span>.
+                            <br />
+                            <span className="text-biko-text2">Yours to fork.</span>
+                        </h2>
 
-                        <div className="flex flex-col gap-4">
-                            <a href="https://github.com/EugeneBoondock/Bikode/blob/main/README.md" className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-black/20 hover:bg-white/5 transition-colors group">
-                                <div className="flex items-center gap-4">
-                                    <div className="p-2 bg-primary/20 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                                        <GitPullRequest size={20} />
-                                    </div>
-                                    <div className="text-left">
-                                        <h4 className="font-semibold">Submit a PR</h4>
-                                        <p className="text-xs text-gray-500">Read our contributing guidelines</p>
-                                    </div>
-                                </div>
-                                <ArrowRight size={16} className="text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
-                            </a>
+                        <div className="space-y-4 mb-8 font-mono text-xs text-biko-text2 leading-relaxed">
+                            <p>
+                                Bikode is licensed under the{' '}
+                                <span className="text-biko-text1 font-semibold">3-clause BSD license</span>.
+                                Every line of its AI engine, plugin system, and GIF-sending chat is open for you
+                                to read, modify, and distribute.
+                            </p>
+                            <p>
+                                We build in the open because great tools deserve a community, not a corporation.
+                                Whether you're fixing a typo in the README or adding a brand new AI provider —
+                                <span className="text-biko-accent"> your PRs are welcome here</span>.
+                            </p>
+                        </div>
 
-                            <a href="https://github.com/EugeneBoondock/Bikode/issues" className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-black/20 hover:bg-white/5 transition-colors group">
-                                <div className="flex items-center gap-4">
-                                    <div className="p-2 bg-purple-500/20 text-purple-400 rounded-lg group-hover:bg-purple-500 group-hover:text-white transition-colors">
-                                        <Users size={20} />
-                                    </div>
-                                    <div className="text-left">
-                                        <h4 className="font-semibold">Join the Discussion</h4>
-                                        <p className="text-xs text-gray-500">Report bugs or suggest features</p>
-                                    </div>
+                        {/* Manifesto items — comic box style */}
+                        <div className="grid grid-cols-2 gap-0">
+                            {[
+                                ['BSD License', 'No strings attached'],
+                                ['Pull Requests', 'Always reviewed'],
+                                ['Issues Open', 'Come find one'],
+                                ['Lightweight', 'Always the goal'],
+                            ].map(([title, sub], i) => (
+                                <div key={i} className="panel p-4" style={{ margin: '-1px' }}>
+                                    <div className="font-mono font-bold text-sm text-biko-accent mb-0.5">{title}</div>
+                                    <div className="font-mono text-xs text-biko-muted">{sub}</div>
                                 </div>
-                                <ArrowRight size={16} className="text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
-                            </a>
+                            ))}
                         </div>
                     </motion.div>
 
-                    {/* Decorative code mockup */}
+                    {/* Right: Contribution steps */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="rounded-2xl border border-white/10 bg-[#0d0d0d] shadow-2xl shadow-black/50 overflow-hidden"
+                        transition={{ duration: 0.55, delay: 0.15 }}
+                        className="space-y-0"
                     >
-                        <div className="flex items-center px-4 py-3 border-b border-white/5 bg-[#1a1a1a]">
-                            <div className="flex gap-2">
-                                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        <div className="badge mb-8">How to contribute</div>
+                        {steps.map((s, i) => (
+                            <div key={i} className="panel p-5 hover:border-biko-accent transition-colors group lift" style={{ margin: '-1px' }}>
+                                <div className="flex items-start gap-4">
+                                    <div className="font-mono text-xs text-biko-muted font-bold tracking-widest pt-0.5 shrink-0">
+                                        {s.n}
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 mb-1">
+                                            {s.icon}
+                                            <h3 className="font-mono font-bold text-sm text-biko-text1">{s.title}</h3>
+                                        </div>
+                                        <p className="font-mono text-xs text-biko-text2 leading-relaxed">{s.desc}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="mx-auto text-xs text-gray-500 font-mono">Bikode.c — Open Source</div>
-                        </div>
-                        <div className="p-6 text-sm font-mono text-gray-300 overflow-x-auto">
-                            <pre>
-                                <span className="text-purple-400">#include</span> <span className="text-green-400">&lt;bikode.h&gt;</span>{'\n'}
-                                <span className="text-gray-500">/* Community-driven features */</span>{'\n'}
-                                <span className="text-blue-400">int</span> <span className="text-yellow-200">main</span>() {'{\n'}
-                                {'  '}BikodeApp app = <span className="text-yellow-200">Initialize</span>();{'\n'}
-                                {'\n'}
-                                {'  '}app.<span className="text-blue-300">onModuleLoad</span>(<span className="text-green-400">"notepad_wrapper"</span>);{'\n'}
-                                {'  '}app.<span className="text-blue-300">enablePlugins</span>(<span className="text-purple-400">true</span>);{'\n'}
-                                {'\n'}
-                                {'  '}printf(<span className="text-green-400">"Welcome to the community!\n"</span>);{'\n'}
-                                {'  '}<span className="text-pink-400">return</span> <span className="text-orange-400">0</span>;{'\n'}
-                                {'}'}
-                            </pre>
-                        </div>
-                        <div className="px-4 py-3 border-t border-white/5 bg-[#1a1a1a] flex justify-between items-center text-xs text-gray-500">
-                            <div className="flex items-center gap-4">
-                                <span className="flex items-center gap-1"><Star size={12} /> Star us on GitHub</span>
-                            </div>
-                            <span>UTF-8 • C++</span>
+                        ))}
+
+                        <div className="pt-6 flex gap-3">
+                            <a
+                                href="https://github.com/EugeneBoondock/Bikode"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex-1 text-center px-4 py-3 bg-biko-accent text-biko-bg font-mono font-bold text-xs tracking-wider hover:bg-biko-accent2 transition-colors border-2 border-biko-accent lift"
+                                style={{ boxShadow: '4px 4px 0 #1a2a4a' }}
+                            >
+                                View on GitHub →
+                            </a>
+                            <a
+                                href="https://github.com/EugeneBoondock/Bikode/issues"
+                                className="flex-1 text-center px-4 py-3 font-mono font-bold text-xs text-biko-text1 tracking-wider hover:text-biko-accent hover:border-biko-accent transition-colors border-2 border-biko-border lift"
+                                style={{ boxShadow: '4px 4px 0 #111' }}
+                            >
+                                Browse Issues →
+                            </a>
                         </div>
                     </motion.div>
                 </div>

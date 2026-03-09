@@ -1,17 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground tracking-tight antialiased;
+    @apply bg-biko-bg text-biko-text1 font-mono antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Grainy noise overlay — from the blood_on_hands.html reference */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.035;
+  }
+}
+
+@layer components {
+  /* Comic book panel border */
+  .panel {
+    @apply border-2 border-biko-border bg-biko-surface;
+    box-shadow: 4px 4px 0 #111;
+    position: relative;
+  }
+  .panel-accent {
+    @apply border-2 border-biko-accent bg-biko-surface;
+    box-shadow: 4px 4px 0 #1a2a4a;
+  }
+
+  /* Monospace label badge */
+  .badge {
+    @apply font-mono text-xs font-bold tracking-widest uppercase px-3 py-1 border border-biko-accent/40 text-biko-accent bg-biko-accent/10;
+    letter-spacing: 0.3em;
+  }
+
+  /* Comic book HALFTONE dot background */
+  .halftone {
+    background-image: radial-gradient(circle, rgba(75,139,245,0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Scrolling ticker */
+  .ticker-track {
+    display: flex;
+    gap: 60px;
+    animation: ticker-scroll 28s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Blinking cursor */
+  .blink {
+    animation: blink-cursor 1s step-end infinite;
+  }
+  @keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* Hover lift */
+  .lift {
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .lift:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 #1a2a4a;
+  }
+
+  /* Comic panel outline text */
+  .outline-text {
+    -webkit-text-stroke: 1px rgba(75,139,245,0.3);
   }
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-surface/50 backdrop-blur-md border border-surfaceBorder;
+  .text-balance {
+    text-wrap: balance;
   }
 }
