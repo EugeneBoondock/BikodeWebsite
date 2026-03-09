@@ -6,9 +6,12 @@ export default function Navbar() {
             <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
                 {/* Logo with Comic book style */}
                 <a href="#" className="flex items-center gap-3 group">
-                    <div className="w-8 h-8 border-2 border-biko-accent bg-biko-accent/20 flex items-center justify-center font-serif text-biko-accent font-bold text-lg" style={{ boxShadow: '2px 2px 0 #1a2a4a' }}>
-                        B
-                    </div>
+                    <img
+                        src="/biko_white.ico"
+                        alt="Bikode Logo"
+                        className="w-8 h-8 object-contain"
+                        style={{ imageRendering: 'pixelated' }}
+                    />
                     <span className="font-mono font-bold text-biko-text1 tracking-tight">BIKODE</span>
                     <span className="badge hidden sm:inline-block">AI IDE</span>
                 </a>
