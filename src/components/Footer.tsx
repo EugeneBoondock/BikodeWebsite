@@ -15,7 +15,7 @@ export default function Footer() {
                         A powerful, open-source wrapper for Notepad that supercharges your daily text editing with modern features and a developer-friendly UI.
                     </p>
                     <div className="flex items-center gap-4 text-gray-500">
-                        <a href="https://github.com/EugeneBoondock/Biko" className="hover:text-white transition-colors"><Github size={20} /></a>
+                        <a href="https://github.com/EugeneBoondock/Bikode" className="hover:text-white transition-colors"><Github size={20} /></a>
                         <a href="#" className="hover:text-blue-400 transition-colors"><Twitter size={20} /></a>
                         <a href="mailto:support@bikode.co.za" className="hover:text-white transition-colors"><Mail size={20} /></a>
                     </div>
@@ -24,17 +24,17 @@ export default function Footer() {
                 <div>
                     <h4 className="font-semibold mb-4 text-gray-200">Resources</h4>
                     <ul className="flex flex-col gap-2 text-sm text-gray-500">
-                        <li><a href="https://github.com/EugeneBoondock/Biko/releases/latest" className="hover:text-white transition-colors">Download</a></li>
-                        <li><a href="https://github.com/EugeneBoondock/Biko#readme" className="hover:text-white transition-colors">Documentation</a></li>
-                        <li><a href="https://github.com/EugeneBoondock/Biko/issues" className="hover:text-white transition-colors">Report an Issue</a></li>
+                        <li><a href="https://github.com/EugeneBoondock/Bikode/releases/latest" className="hover:text-white transition-colors">Download</a></li>
+                        <li><a href="https://github.com/EugeneBoondock/Bikode#readme" className="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="https://github.com/EugeneBoondock/Bikode/issues" className="hover:text-white transition-colors">Report an Issue</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 className="font-semibold mb-4 text-gray-200">Community</h4>
                     <ul className="flex flex-col gap-2 text-sm text-gray-500">
-                        <li><a href="https://github.com/EugeneBoondock/Biko/blob/main/README.md" className="hover:text-white transition-colors">Contributing</a></li>
-                        <li><a href="https://github.com/EugeneBoondock/Biko/pulls" className="hover:text-white transition-colors">Pull Requests</a></li>
+                        <li><a href="https://github.com/EugeneBoondock/Bikode/blob/main/README.md" className="hover:text-white transition-colors">Contributing</a></li>
+                        <li><a href="https://github.com/EugeneBoondock/Bikode/pulls" className="hover:text-white transition-colors">Pull Requests</a></li>
                         <li><a href="#" className="hover:text-white transition-colors">Discord (TBA)</a></li>
                     </ul>
                 </div>

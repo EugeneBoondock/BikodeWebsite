@@ -4,8 +4,8 @@ import { Zap, Code, Shield, Cpu, RefreshCw, Box } from 'lucide-react';
 const features = [
     {
         icon: <Zap className="text-yellow-400" size={24} />,
-        title: "Lightning Fast",
-        description: "Built on C++ and highly optimized, Bikode opens instantly and stays responsive even with massive files."
+        title: "Lightweight Core",
+        description: "Built on top of Notepad2e and highly optimized, Bikode opens instantly and consumes minimal RAM."
     },
     {
         icon: <Code className="text-blue-400" size={24} />,
@@ -24,8 +24,8 @@ const features = [
     },
     {
         icon: <RefreshCw className="text-pink-400" size={24} />,
-        title: "Modern Workflows",
-        description: "Seamless hot-reloading, auto-formatting, and intelligent text editing right out of the box."
+        title: "Modern Texting",
+        description: "Supports sending GIFs and modern messaging features while maintaining a completely low-profile structure."
     },
     {
         icon: <Shield className="text-teal-400" size={24} />,

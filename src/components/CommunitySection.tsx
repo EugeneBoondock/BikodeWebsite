@@ -21,7 +21,7 @@ export default function CommunitySection() {
                         </p>
 
                         <div className="flex flex-col gap-4">
-                            <a href="https://github.com/EugeneBoondock/Biko/blob/main/README.md" className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-black/20 hover:bg-white/5 transition-colors group">
+                            <a href="https://github.com/EugeneBoondock/Bikode/blob/main/README.md" className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-black/20 hover:bg-white/5 transition-colors group">
                                 <div className="flex items-center gap-4">
                                     <div className="p-2 bg-primary/20 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
                                         <GitPullRequest size={20} />
@@ -34,7 +34,7 @@ export default function CommunitySection() {
                                 <ArrowRight size={16} className="text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
                             </a>
 
-                            <a href="https://github.com/EugeneBoondock/Biko/issues" className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-black/20 hover:bg-white/5 transition-colors group">
+                            <a href="https://github.com/EugeneBoondock/Bikode/issues" className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-black/20 hover:bg-white/5 transition-colors group">
                                 <div className="flex items-center gap-4">
                                     <div className="p-2 bg-purple-500/20 text-purple-400 rounded-lg group-hover:bg-purple-500 group-hover:text-white transition-colors">
                                         <Users size={20} />

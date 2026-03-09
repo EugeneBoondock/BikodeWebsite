@@ -21,7 +21,7 @@ function App() {
         <nav className="hidden md:flex gap-6 text-sm font-medium text-gray-400">
           <a href="#features" className="hover:text-white transition-colors">Features</a>
           <a href="#community" className="hover:text-white transition-colors">Community</a>
-          <a href="https://github.com/EugeneBoondock/Biko" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
+          <a href="https://github.com/EugeneBoondock/Bikode" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
         </nav>
       </header>
 
