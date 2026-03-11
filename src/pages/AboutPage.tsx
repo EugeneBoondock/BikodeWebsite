@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
     ArrowLeft,
@@ -55,10 +54,6 @@ const readingLinks = [
 ];
 
 export default function AboutPage() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <div className="min-h-screen flex flex-col items-center w-full overflow-hidden relative">
             <Navbar />
@@ -154,8 +149,8 @@ export default function AboutPage() {
                             <div className="panel-accent p-5 sm:max-w-sm sm:-mt-10 sm:ml-auto relative z-10 rotate-[2deg]">
                                 <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-biko-bg/80 mb-2">Studio Note</p>
                                 <p className="font-mono text-xs text-biko-text1 leading-relaxed">
-                                    Bikode pairs a Notepad2e core with AI agents, terminal tooling, Git workflows, and a product voice rooted in African intellectual
-                                    seriousness rather than generic startup language.
+                                    Bikode pairs a Notepad2e core with AI agents, terminal tooling, Git workflows, and a product voice rooted in African intellectualism
+                                    rather than generic startup language.
                                 </p>
                             </div>
                         </motion.div>
