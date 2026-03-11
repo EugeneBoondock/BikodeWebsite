@@ -26,7 +26,6 @@ export default function Footer() {
         <footer className="w-full border-t-2 border-biko-border bg-biko-bg pt-16 pb-8 font-mono">
             <div className="max-w-6xl mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                    {/* Brand column */}
                     <div className="md:col-span-2">
                         <div className="flex items-center gap-3 mb-4">
                             <img
@@ -83,18 +82,20 @@ export default function Footer() {
 
                     {Object.entries(links).map(([section, items]) => (
                         <div key={section}>
-                            <h4 className="text-xs font-bold text-biko-text1 tracking-widest uppercase mb-4 border-b border-biko-divider pb-2">{section}</h4>
+                            <h4 className="text-xs font-bold text-biko-text1 tracking-widest uppercase mb-4 border-b border-biko-divider pb-2">
+                                {section}
+                            </h4>
                             <ul className="space-y-2">
-                                {items.map((l) => (
-                                    <li key={l.label}>
+                                {items.map((link) => (
+                                    <li key={link.label}>
                                         <a
-                                            href={l.href}
-                                            download={l.download}
-                                            target={l.href.startsWith('http') ? '_blank' : undefined}
-                                            rel={l.href.startsWith('http') ? 'noreferrer' : undefined}
+                                            href={link.href}
+                                            download={link.download}
+                                            target={link.href.startsWith('http') ? '_blank' : undefined}
+                                            rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
                                             className="text-xs text-biko-text2 hover:text-biko-accent transition-colors"
                                         >
-                                            {l.label}
+                                            {link.label}
                                         </a>
                                     </li>
                                 ))}
@@ -103,10 +104,9 @@ export default function Footer() {
                     ))}
                 </div>
 
-                {/* Bottom bar */}
                 <div className="border-t border-biko-divider pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-biko-muted tracking-widest uppercase">
                     <p>
-                        © {new Date().getFullYear()}{' '}
+                        (c) {new Date().getFullYear()}{' '}
                         <a
                             href="https://boondocklabs.co.za"
                             target="_blank"
@@ -115,9 +115,10 @@ export default function Footer() {
                         >
                             BoondockLabs
                         </a>
-                        {' '}· Bikode · BSD-3 License
+                        {' '}| Bikode | BSD-3 License
                     </p>
                     <div className="flex gap-6">
+                        <Link to="/about" className="hover:text-biko-accent transition-colors">About</Link>
                         <Link to="/privacy" className="hover:text-biko-accent transition-colors">Privacy</Link>
                         <Link to="/terms" className="hover:text-biko-accent transition-colors">Terms</Link>
                         <a href="https://github.com/EugeneBoondock/Bikode" target="_blank" rel="noreferrer" className="hover:text-biko-accent transition-colors">Source</a>
