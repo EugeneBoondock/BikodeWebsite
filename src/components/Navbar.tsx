@@ -4,15 +4,17 @@ export default function Navbar() {
     return (
         <header className="w-full border-b-2 border-biko-border bg-biko-bg/95 backdrop-blur-sm sticky top-0 z-50">
             <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-                {/* Logo with Comic book style */}
                 <a href="#" className="flex items-center gap-3 group">
                     <img
                         src="/biko_white.ico"
                         alt="Bikode Logo"
                         className="w-8 h-8 object-contain"
-                        style={{ imageRendering: 'pixelated' }}
                     />
-                    <span className="font-mono font-bold text-biko-text1 tracking-tight">BIKODE</span>
+                    <span className="font-mono text-xl font-bold tracking-[0.08em] leading-none">
+                        <span className="text-biko-text1">BI</span>
+                        <span className="text-biko-accent">KO</span>
+                        <span className="text-biko-text2">DE</span>
+                    </span>
                     <span className="badge hidden sm:inline-block">AI IDE</span>
                 </a>
 
