@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Download, Github } from 'lucide-react';
+import { STABLE_WINDOWS_INSTALLER_NAME, STABLE_WINDOWS_INSTALLER_PATH } from '../config/downloads';
 
 export default function HeroSection() {
     return (
@@ -49,7 +50,8 @@ export default function HeroSection() {
 
                     <div className="flex flex-col sm:flex-row gap-3">
                         <a
-                            href="https://github.com/EugeneBoondock/Bikode/releases/latest"
+                            href={STABLE_WINDOWS_INSTALLER_PATH}
+                            download={STABLE_WINDOWS_INSTALLER_NAME}
                             className="flex items-center justify-center gap-2 px-6 py-3 bg-biko-accent text-biko-bg font-mono font-bold text-sm tracking-wider hover:bg-biko-accent2 transition-colors border-2 border-biko-accent lift"
                             style={{ boxShadow: '4px 4px 0 #1a2a4a' }}
                         >

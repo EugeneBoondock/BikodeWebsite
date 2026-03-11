@@ -1,9 +1,16 @@
 import { Github, Mail, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { STABLE_WINDOWS_INSTALLER_NAME, STABLE_WINDOWS_INSTALLER_PATH } from '../config/downloads';
 
-const links = {
+type FooterLink = {
+    label: string;
+    href: string;
+    download?: string;
+};
+
+const links: Record<string, FooterLink[]> = {
     Resources: [
-        { label: 'Download', href: 'https://github.com/EugeneBoondock/Bikode/releases/latest' },
+        { label: 'Download', href: STABLE_WINDOWS_INSTALLER_PATH, download: STABLE_WINDOWS_INSTALLER_NAME },
         { label: 'README / Docs', href: 'https://github.com/EugeneBoondock/Bikode#readme' },
         { label: 'Report an Issue', href: 'https://github.com/EugeneBoondock/Bikode/issues' },
     ],
@@ -82,6 +89,7 @@ export default function Footer() {
                                     <li key={l.label}>
                                         <a
                                             href={l.href}
+                                            download={l.download}
                                             target={l.href.startsWith('http') ? '_blank' : undefined}
                                             rel={l.href.startsWith('http') ? 'noreferrer' : undefined}
                                             className="text-xs text-biko-text2 hover:text-biko-accent transition-colors"
