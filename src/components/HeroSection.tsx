@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
-import { Download, Github } from 'lucide-react';
-import { STABLE_WINDOWS_INSTALLER_NAME, STABLE_WINDOWS_INSTALLER_PATH } from '../config/downloads';
+import { Apple, Download, Github, Monitor } from 'lucide-react';
+import {
+    STABLE_MAC_DOWNLOAD_NAME,
+    STABLE_MAC_DOWNLOAD_PATH,
+    STABLE_WINDOWS_INSTALLER_NAME,
+    STABLE_WINDOWS_INSTALLER_PATH,
+} from '../config/downloads';
 
 export default function HeroSection() {
     return (
@@ -43,16 +48,43 @@ export default function HeroSection() {
                         Zero bloat. Maximum power.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl">
                         <a
                             href={STABLE_WINDOWS_INSTALLER_PATH}
                             download={STABLE_WINDOWS_INSTALLER_NAME}
-                            className="flex items-center justify-center gap-2 px-6 py-3 bg-biko-accent text-biko-bg font-mono font-bold text-sm tracking-wider hover:bg-biko-accent2 transition-colors border-2 border-biko-accent lift"
+                            className="group flex items-center justify-between gap-4 px-5 py-4 bg-biko-accent text-biko-bg font-mono border-2 border-biko-accent lift"
                             style={{ boxShadow: '4px 4px 0 #1a2a4a' }}
                         >
-                            <Download size={15} />
-                            Download Free
+                            <div className="flex items-center gap-3">
+                                <div className="flex h-10 w-10 items-center justify-center border-2 border-biko-bg/70 bg-biko-bg/10">
+                                    <Monitor size={18} />
+                                </div>
+                                <div className="text-left">
+                                    <div className="text-[10px] uppercase tracking-[0.24em] text-biko-bg/80">Windows</div>
+                                    <div className="text-sm font-bold tracking-[0.18em] uppercase">Download Bikode</div>
+                                </div>
+                            </div>
+                            <Download size={16} className="transition-transform group-hover:translate-y-[1px]" />
                         </a>
+                        <a
+                            href={STABLE_MAC_DOWNLOAD_PATH}
+                            download={STABLE_MAC_DOWNLOAD_NAME}
+                            className="group flex items-center justify-between gap-4 px-5 py-4 bg-biko-hover text-biko-text1 font-mono border-2 border-biko-border hover:border-biko-accent transition-colors lift"
+                            style={{ boxShadow: '4px 4px 0 #111' }}
+                        >
+                            <div className="flex items-center gap-3">
+                                <div className="flex h-10 w-10 items-center justify-center border-2 border-biko-divider bg-biko-bg">
+                                    <Apple size={18} />
+                                </div>
+                                <div className="text-left">
+                                    <div className="text-[10px] uppercase tracking-[0.24em] text-biko-muted">macOS</div>
+                                    <div className="text-sm font-bold tracking-[0.18em] uppercase">Download Bikode</div>
+                                </div>
+                            </div>
+                            <Download size={16} className="text-biko-accent transition-transform group-hover:translate-y-[1px]" />
+                        </a>
+                    </div>
+                    <div className="mt-3 flex flex-col sm:flex-row gap-3">
                         <a
                             href="https://github.com/EugeneBoondock/Bikode"
                             target="_blank"

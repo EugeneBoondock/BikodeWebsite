@@ -1,6 +1,11 @@
 import { Github, Mail, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { STABLE_WINDOWS_INSTALLER_NAME, STABLE_WINDOWS_INSTALLER_PATH } from '../config/downloads';
+import {
+    STABLE_MAC_DOWNLOAD_NAME,
+    STABLE_MAC_DOWNLOAD_PATH,
+    STABLE_WINDOWS_INSTALLER_NAME,
+    STABLE_WINDOWS_INSTALLER_PATH,
+} from '../config/downloads';
 
 type FooterLink = {
     label: string;
@@ -10,7 +15,8 @@ type FooterLink = {
 
 const links: Record<string, FooterLink[]> = {
     Resources: [
-        { label: 'Download', href: STABLE_WINDOWS_INSTALLER_PATH, download: STABLE_WINDOWS_INSTALLER_NAME },
+        { label: 'Download for Windows', href: STABLE_WINDOWS_INSTALLER_PATH, download: STABLE_WINDOWS_INSTALLER_NAME },
+        { label: 'Download for macOS', href: STABLE_MAC_DOWNLOAD_PATH, download: STABLE_MAC_DOWNLOAD_NAME },
         { label: 'README / Docs', href: 'https://github.com/EugeneBoondock/Bikode#readme' },
         { label: 'Report an Issue', href: 'https://github.com/EugeneBoondock/Bikode/issues' },
     ],
