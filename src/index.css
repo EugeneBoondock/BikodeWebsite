@@ -40,8 +40,8 @@
 
   /* Monospace label badge */
   .badge {
-    @apply font-mono text-xs font-bold tracking-widest uppercase px-3 py-1 border border-biko-accent/40 text-biko-accent bg-biko-accent/10;
-    letter-spacing: 0.3em;
+    @apply font-mono text-[10px] sm:text-[11px] font-semibold uppercase px-3 py-1.5 border border-biko-accent border-opacity-50 text-biko-text1 bg-biko-accent bg-opacity-20 rounded-sm shadow-[0_4px_12px_rgba(9,15,30,0.25)];
+    letter-spacing: 0.22em;
   }
 
   /* Comic book HALFTONE dot background */

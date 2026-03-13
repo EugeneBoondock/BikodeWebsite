@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
 import { Apple, Download, Github, Monitor } from 'lucide-react';
 import {
-    STABLE_MAC_DOWNLOAD_NAME,
     STABLE_MAC_DOWNLOAD_PATH,
-    STABLE_WINDOWS_INSTALLER_NAME,
     STABLE_WINDOWS_INSTALLER_PATH,
 } from '../config/downloads';
 
@@ -51,7 +49,6 @@ export default function HeroSection() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl">
                         <a
                             href={STABLE_WINDOWS_INSTALLER_PATH}
-                            download={STABLE_WINDOWS_INSTALLER_NAME}
                             className="group flex items-center justify-between gap-4 px-5 py-4 bg-biko-accent text-biko-bg font-mono border-2 border-biko-accent lift"
                             style={{ boxShadow: '4px 4px 0 #1a2a4a' }}
                         >
@@ -68,7 +65,6 @@ export default function HeroSection() {
                         </a>
                         <a
                             href={STABLE_MAC_DOWNLOAD_PATH}
-                            download={STABLE_MAC_DOWNLOAD_NAME}
                             className="group flex items-center justify-between gap-4 px-5 py-4 bg-biko-hover text-biko-text1 font-mono border-2 border-biko-border hover:border-biko-accent transition-colors lift"
                             style={{ boxShadow: '4px 4px 0 #111' }}
                         >

@@ -1,3 +1,8 @@
+const oklch = (value) => ({ opacityValue }) =>
+  opacityValue === undefined
+    ? `oklch(${value})`
+    : `oklch(${value} / ${opacityValue})`;
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,22 +12,42 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Exact Bikode IDE dark palette from WelcomeScreen.c
-        'biko-bg': '#181818',   // DK_BG    RGB(24,24,24)
-        'biko-surface': '#242424',   // DK_SURFACE
-        'biko-hover': '#30323a',   // DK_SURFACE_HOV
-        'biko-border': '#373737',   // DK_BORDER
-        'biko-accent': '#4B8BF5',   // DK_ACCENT
-        'biko-accent2': '#64A0FF',   // DK_ACCENT_HOV
-        'biko-text1': '#E6E6E6',   // DK_TEXT1
-        'biko-text2': '#969696',   // DK_TEXT2
-        'biko-muted': '#505050',   // DK_MUTED
-        'biko-divider': '#323232',   // DK_DIVIDER
+        // OKLCH palette: 60/30/10 balance with WCAG AA text contrast.
+        // Neutrals are subtly tinted toward the brand hue (~255deg).
+        'biko-bg': oklch('21% 0.02 255'),
+        'biko-surface': oklch('26% 0.02 255'),
+        'biko-hover': oklch('30% 0.03 255'),
+        'biko-border': oklch('34% 0.03 255'),
+        'biko-divider': oklch('31% 0.02 255'),
+        'biko-text1': oklch('92% 0.01 255'),
+        'biko-text2': oklch('76% 0.02 255'),
+        'biko-muted': oklch('68% 0.02 255'),
+        'biko-accent': oklch('67% 0.18 255'),
+        'biko-accent2': oklch('74% 0.18 255'),
+        'biko-success': oklch('72% 0.16 145'),
+        'biko-warning': oklch('78% 0.16 85'),
+        'biko-danger': oklch('70% 0.18 25'),
+        'biko-info': oklch('70% 0.14 210'),
       },
       fontFamily: {
-        mono: ['"IBM Plex Mono"', 'Consolas', 'monospace'],
-        serif: ['"DM Serif Display"', 'Georgia', 'serif'],
-        sans: ['"Inter"', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        serif: ['"Fraunces"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+      },
+      fontSize: {
+        'step--2': ['var(--step--2)', { lineHeight: 'var(--leading-body)', letterSpacing: '0.02em' }],
+        'step--1': ['var(--step--1)', { lineHeight: 'var(--leading-body)' }],
+        'step-0': ['var(--step-0)', { lineHeight: 'var(--leading-body)' }],
+        'step-1': ['var(--step-1)', { lineHeight: 'var(--leading-heading)' }],
+        'step-2': ['var(--step-2)', { lineHeight: 'var(--leading-heading)' }],
+        'step-3': ['var(--step-3)', { lineHeight: 'var(--leading-heading)' }],
+        'step-4': ['var(--step-4)', { lineHeight: 'var(--leading-display)' }],
+        'step-5': ['var(--step-5)', { lineHeight: 'var(--leading-display)' }],
+        'step-6': ['var(--step-6)', { lineHeight: 'var(--leading-display)' }],
+        'step-7': ['var(--step-7)', { lineHeight: 'var(--leading-display)' }],
+      },
+      maxWidth: {
+        measure: '65ch',
       },
     },
   },
