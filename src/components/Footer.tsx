@@ -108,7 +108,7 @@ export default function Footer() {
 
                 <div className="border-t border-biko-divider pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-biko-muted tracking-widest uppercase">
                     <p>
-                        (c) {new Date().getFullYear()}{' '}
+                        © {new Date().getFullYear()}{' '}
                         <a
                             href="https://boondocklabs.co.za"
                             target="_blank"

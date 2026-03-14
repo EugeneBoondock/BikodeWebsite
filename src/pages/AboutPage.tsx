@@ -123,7 +123,7 @@ export default function AboutPage() {
                                 </div>
 
                                 <div className="panel-accent p-5">
-                                    <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-biko-bg/80 mb-2">Intellectual Thread</p>
+                                    <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-biko-text1/90 mb-2">Intellectual Thread</p>
                                     <p className="font-serif text-2xl text-biko-text1 mb-2">Biko&apos;s influence</p>
                                     <p className="font-mono text-xs text-biko-text1/80 leading-relaxed">
                                         The app&apos;s voice leans on a tradition of critical consciousness, self-respect, and refusing to build from borrowed assumptions.
@@ -147,7 +147,7 @@ export default function AboutPage() {
                             </div>
 
                             <div className="panel-accent p-5 sm:max-w-sm sm:-mt-10 sm:ml-auto relative z-10 rotate-[2deg]">
-                                <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-biko-bg/80 mb-2">Studio Note</p>
+                                <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-biko-text1/90 mb-2">Studio Note</p>
                                 <p className="font-mono text-xs text-biko-text1 leading-relaxed">
                                     Bikode pairs a Notepad2e core with AI agents, terminal tooling, Git workflows, and a product voice rooted in African intellectualism
                                     rather than generic startup language.
@@ -280,7 +280,7 @@ export default function AboutPage() {
                             className="space-y-4"
                         >
                             <div className="panel-accent p-6">
-                                <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-biko-bg/80 mb-3">Respect Note</p>
+                                <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-biko-text1/90 mb-3">Respect Note</p>
                                 <p className="font-mono text-sm text-biko-text1 leading-relaxed">
                                     This homage is meant with care. It does not claim endorsement from Steve Biko, his family, or his intellectual legacy. It is simply a
                                     respectful acknowledgment that Bikode was shaped, in part, by the seriousness of his writing and the discipline of his critique.
